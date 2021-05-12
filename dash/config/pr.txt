@@ -1,0 +1,4 @@
+define('DB_USERNAME', 'aiyejant_taxvex_dot_com');
+define('DB_PASSWORD', 'NabA*z6rM%;#');
+define('DB_NAME', 'aiyejant_taxvex_dot_com');
+ 
