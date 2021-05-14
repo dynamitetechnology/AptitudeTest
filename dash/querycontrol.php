@@ -294,18 +294,23 @@ $hiddenid = $_POST['hiddenid'];
                  }
             // Close connection
             mysqli_close($conn);	
-}else if (isset($_POST['contactsection'])){
-    $first_name = $_POST['first_name'];
-	$last_name = $_POST['last_name'];
+}else if (isset($_POST['createcollege'])){
+    $collegename = $_POST['collegename'];
+	$slugname = $_POST['slugname'];
+	$tponame = $_POST['tponame'];
 	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-	$message = $_POST['message'];
+	$address = $_POST['address'];
 
-    $sql = "insert into  usercontacts (first_name, last_name, email, phone, message) values('$first_name', '$last_name', '$email','$phone','$message')";
+    $sql = "insert into college (collegename,slugname,tponame,email,address) values('$collegename','$slugname','$tponame','$email','$address')";
                     if (mysqli_query($conn, $sql)) {
             //echo "New record created successfully !";
     
-            header("Location: ../thankyou.php");
+            ///header("Location: ../thankyou.php");
+
+            echo "<script>alert('College Create Successfully')
+            window.location.href= 'regcollage.php'
+            </script>";
+               //header("Location: regcollage.php");
             
                      die("Redirecting to Welcome");
                     exit();
@@ -315,6 +320,31 @@ $hiddenid = $_POST['hiddenid'];
                  }
             // Close connection
             mysqli_close($conn);	
+}else if (isset($_POST['getcollegeid'])){
+    $collegeid = $_POST['getcollegeid'];
+
+
+    $sql = "select id,collegename,slugname,tponame,email,address from college where id = '$collegeid'";
+
+    $return_arr = array();
+
+if ($result = mysqli_query( $conn, $sql )){
+    while ($row = mysqli_fetch_assoc($result)) {
+    $row_array['id'] = $row['id'];
+	$row_array['collegename'] = $row['collegename'];
+	$row_array['slugname'] = $row['slugname'];
+	$row_array['tponame'] = $row['tponame'];
+	$row_array['email'] = $row['email'];
+    $row_array['address'] = $row['address'];
+
+    array_push($return_arr,$row_array);
+   }
+ }
+ 
+
+mysqli_close($conn);
+
+echo json_encode($return_arr);
 }
     
 
