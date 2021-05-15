@@ -16,3 +16,22 @@ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 NAME VARCHAR(50),
 STATUS ENUM('Y','N') DEFAULT 'Y'
 )
+
+CREATE TABLE `students` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(200) NOT NULL,
+  `fullname` varchar(200) DEFAULT NULL,
+  `email` varchar(200) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `phoneno` varchar(15) NOT NULL,
+  `password` text,
+  `status` enum('Y','N') DEFAULT 'Y',
+  `create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `college_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `phoneno` (`phoneno`),
+  KEY `college_id` (`college_id`),
+  CONSTRAINT `college_id` FOREIGN KEY (`college_id`) REFERENCES `college` (`id`)
+)

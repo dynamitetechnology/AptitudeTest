@@ -345,7 +345,48 @@ if ($result = mysqli_query( $conn, $sql )){
 mysqli_close($conn);
 
 echo json_encode($return_arr);
-}
+}else if (isset($_POST['StudentRegistration'])){
+
+    $fullname = $_POST['fullname'];
+	$username = $_POST['username'];
+	$email = $_POST['email'];
+	$gender = $_POST['gender'];
+	$phoneno = $_POST['phoneno'];
+    $collage_id = $_POST['college_id'];
+   // $password = $_POST['password'];
+    $password =  password_hash($_POST['password'], PASSWORD_DEFAULT); // Creates a password hash   
     
 
+    $query = "select * from students where username = '$username' ";
+    $result = mysqli_query($conn,$query);
+    if ($result) {
+      if (mysqli_num_rows($result) > 0) {
+        echo "<script>alert('username already exist')
+      window.location.href='../reg.php';
+        </script>";
+      } else {
+        //echo 'not found';
+        $sql = "insert into students (username, fullname, email, gender, phoneno, password, college_id) values('$username','$fullname','$email','$gender','$phoneno','$password','$collage_id')";
+                    if (mysqli_query($conn, $sql)) {
+                            echo "<script>alert('Successfully Register')
+                            window.location.href='./../login.php';
+                            </script>";
+                        
+            //header("Location: ../index.php");
+                     die("Redirecting to Welcome");
+                    exit();
+                 } else {
+                    echo "<script>alert('Error Something went Wrong')
+                    window.location.href='./../login.php';
+                    </script>";
+//echo "Error: " . $sql . "
+        //    " . mysqli_error($conn);
+                 }
+            mysqli_close($conn);	
+      }
+    } else {
+      echo 'Error: '.mysql_error();
+    }
+
+}
 ?>

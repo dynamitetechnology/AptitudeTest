@@ -8,8 +8,6 @@
             include_once 'config/config.php';
             //$eventname =  htmlspecialchars($_GET["eventname"]);
             $categoryList = mysqli_query($conn,"select id,name from categories where active = 'Y' order by id desc");
-			
-			
        ?>
 
 
