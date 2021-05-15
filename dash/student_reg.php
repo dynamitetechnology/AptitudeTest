@@ -44,9 +44,10 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control mb-2  rounded-0" name="password" placeholder="Password" required>
       <input type="hidden" value="<?php echo  $value->id ;?>" name="college_id" >
+      <input type="hidden" value="<?php echo $slugname ?>" name="slugname" >
  
       <input class="btn btn-lg btn-primary btn-block rounded-0" type="submit" value="Sign in" name="StudentRegistration">
-      <a href="login.php" class="btn btn-lg btn-danger btn-block rounded-0" type="submit">Login</a>
+      <a href="./../login.php" class="btn btn-lg btn-danger btn-block rounded-0">Login</a>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
