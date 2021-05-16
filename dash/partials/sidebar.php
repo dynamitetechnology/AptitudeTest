@@ -23,9 +23,14 @@
         <span>Register Collage</span></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="registrationlicenses.php">
+    <a class="nav-link" href="students.php">
         <i class="fas fa-fw fa-blog"></i>
-        <span>Post</span></a>
+        <span>Students</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="addquiz.php">
+        <i class="fas fa-fw fa-blog"></i>
+        <span>Add Quiz</span></a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="enquiries.php">

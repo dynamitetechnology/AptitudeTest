@@ -4,7 +4,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-user"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Taxvex.com</div>
+    <div class="sidebar-brand-text mx-3">Online Exam</div>
 </a>
 <hr class="sidebar-divider my-0">
 <li class="nav-item active">
@@ -14,24 +14,19 @@
 </li>
 <hr class="sidebar-divider">
 <li class="nav-item">
-    <a class="nav-link" href="regcollage.php">
-        <i class="fas fa-fw fa-blog"></i>
-        <span>Register Collage</span></a>
+    <a class="nav-link" href="exams.php">
+        <i class="fas fa-fw fa-laptop"></i>
+        <span>Exam</span></a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="registrationlicenses.php">
-        <i class="fas fa-fw fa-blog"></i>
-        <span>Post</span></a>
+        <i class="fas fa-fw fa-poll"></i>
+        <span>Result</span></a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="enquiries.php">
-        <i class="fas fa-fw fa-info"></i>
-        <span>Enquiries</span></a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="addcategory.php">
-        <i class="fas fa-fw fa-blog"></i>
-        <span>Category</span></a>
+        <i class="fas fa-fw fa-comments-dollar"></i>
+        <span>Feedback</span></a>
 </li>
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

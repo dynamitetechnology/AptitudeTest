@@ -22,7 +22,7 @@
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                 </div>
 
-                <?php 
+       <?php 
             include_once 'config/config.php';
             //$eventname =  htmlspecialchars($_GET["eventname"]);
             $registrationlicenceList = mysqli_query($conn,"select id,title,shortdesc,description,filepath from blog where active = 'Y' order by id desc");

@@ -392,5 +392,30 @@ echo json_encode($return_arr);
      </script>";
     }
 
+}else if (isset($_POST['addQuiz'])){
+    $title = $_POST['title'];
+	$no_of_questions = $_POST['no_of_questions'];
+	$marks = $_POST['marks'];
+	$time = $_POST['time'];
+
+    $sql = "insert into quiz (title,marks,no_of_question,time) values('$title','$marks','$no_of_questions','$time')";
+                    if (mysqli_query($conn, $sql)) {
+            //echo "New record created successfully !";
+    
+            ///header("Location: ../thankyou.php");
+
+            echo "<script>alert('Quiz Added Successfully')
+            window.location.href= 'addquiz.php'
+            </script>";
+               //header("Location: regcollage.php");
+            
+                     die("Redirecting to Welcome");
+                    exit();
+                 } else {
+                    echo "Error: " . $sql . "
+            " . mysqli_error($conn);
+                 }
+            // Close connection
+            mysqli_close($conn);	
 }
 ?>
