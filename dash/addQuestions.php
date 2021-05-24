@@ -38,42 +38,44 @@
 
                 <div class="row">
                     <div class="col-xl-12 col-lg-12">
-                        <div class="card shadow mb-4 rounded-0">
-                            <div class="card-header">
-                                <h6 class=" mt-2 font-weight-bold text-primary">Enter Quiz Details</h6>
-                            </div>
-                            <div class="card-body">
-                                <form action="querycontrol.php" method="POST">
+
+                        <form action="querycontrol.php" method="POST">
             <?php
                $i=1;
                 $count = 1;
-                while($i <= $queCount) {
+                while($i <= $queCount) {           
             ?>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Question number <?php echo $count ++ ?> :</label>
-                                        <textarea class="form-control rounded-0"  ></textarea>
+                            <div class="card shadow mb-4 rounded-0">
+                                <div class="card-header">
+                                    <h6 class=" mt-2 font-weight-bold text-primary">Question Number <?php echo $count ++ ?></h6>
+                                </div>
+                                <div class="card-body">
+
+                                <div class="form-group">
+                                        <label >Type Question :</label>
+                                        <textarea class="form-control rounded-0"  name="question[]"></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Enter Option A</label>
-                                        <input type="text" class="form-control rounded-0"  >
+                                        <label>Enter Option A</label>
+                                        <input type="text" class="form-control rounded-0"  name="optiona[]">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Enter Option B</label>
-                                        <input type="text" class="form-control rounded-0"  >
+                                        <label>Enter Option B</label>
+                                        <input type="text" class="form-control rounded-0"  name="optionb[]">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Enter Option C</label>
-                                        <input type="text" class="form-control rounded-0"  >
+                                        <label>Enter Option C</label>
+                                        <input type="text" class="form-control rounded-0"   name="optionc[]">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Enter Option D</label>
-                                        <input type="text" class="form-control rounded-0"  >
+                                        <label >Enter Option D</label>
+                                        <input type="text" class="form-control rounded-0"   name="optiond[]">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Enter Option D</label>
-                                        <select class="form-control rounded-0"  >
+                                        <label >Correct Answer</label>
+                                        <select class="form-control rounded-0" name="correctans[]" >
                                         <option value="a">Option A</option>
                                         <option value="b">Option B</option>
                                         <option value="c">Option C</option>
@@ -81,16 +83,16 @@
                                         </select>
                                     </div>
 
-                                    <?php
+                                </div>
+                            </div>
+                            <?php
 					$i++;
 				}
 			  ?>
 
-                                    <input type="submit" class="btn btn-primary rounded-0" name="addQuiz"
-                                        value="Submit">
-                                </form>
-                            </div>
-                        </div>
+                            <input type="submit" class="btn btn-primary rounded-0" name="addQuestions" value="Submit">
+                        </form>
+
                     </div>
                 </div>
             </div>

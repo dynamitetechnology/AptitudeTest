@@ -417,5 +417,25 @@ echo json_encode($return_arr);
                  }
             // Close connection
             mysqli_close($conn);	
+}else if (isset($_POST['addQuestions'])){
+    $question = $_POST['question'];
+    $optiona = $_POST['optiona'];
+    $optionb = $_POST['optionb'];
+    $optionc = $_POST['optionc'];
+    $optiond = $_POST['optiond'];
+    $correctans = $_POST['correctans'];
+
+    foreach( $question as $key => $n ) {
+        echo "The Question is ".$n.", OPA is ".$optiona[$key];
+
+              echo $optionb[$key];
+              echo $optionc[$key];
+              echo $optiond[$key];
+              echo $correctans[$key];
+              $sql = "insert into questions (title,marks,no_of_question,time) values('$title','$marks','$no_of_questions','$time')";
+
+              mysqli_query($conn, $sql)
+      }
+    
 }
 ?>
