@@ -424,6 +424,7 @@ echo json_encode($return_arr);
     $optionc = $_POST['optionc'];
     $optiond = $_POST['optiond'];
     $correctans = $_POST['correctans'];
+    $quizid = $_POST['quizid'];
 
     foreach( $question as $key => $n ) {
         echo "The Question is ".$n.", OPA is ".$optiona[$key];
@@ -432,10 +433,15 @@ echo json_encode($return_arr);
               echo $optionc[$key];
               echo $optiond[$key];
               echo $correctans[$key];
-              $sql = "insert into questions (title,marks,no_of_question,time) values('$title','$marks','$no_of_questions','$time')";
+              $sql = "insert into questions (question,optiona,optionb,optionc,optiond,answer,quiz_id) 
+              values('$n','$optiona[$key]','$optionb[$key]','$optionb[$key]','$optiond[$key]','$correctans[$key]','$quizid')";
 
-              mysqli_query($conn, $sql)
+              if (mysqli_query($conn, $sql)) {
+                
+              }
       }
-    
+
+       header("Location: addquiz.php");
+       mysqli_close($conn);	
 }
 ?>

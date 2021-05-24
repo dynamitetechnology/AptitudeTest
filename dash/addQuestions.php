@@ -54,6 +54,7 @@
                                 <div class="form-group">
                                         <label >Type Question :</label>
                                         <textarea class="form-control rounded-0"  name="question[]"></textarea>
+                                        <input type="hidden" name="quizid" value="<?php echo $quizid ?>">
                                     </div>
 
                                     <div class="form-group">

@@ -106,7 +106,7 @@
       <?php if($row["status"] == "ENABLED" ) {?>
       <a href="#" title="Add Questions" ><i class="fas fa-fw fa-eye text-success"></i></a>
       <?php } else {?>
-      <a href="#" title="Add Questions" ><i class="fas fa-fw fa-eye-slash text-danger"></i></a>
+      <a href="viewQuestion.php?quizid=<?php echo  $row["id"]; ?>" title="View Questions" ><i class="fas fa-fw fa-eye-slash text-danger"></i></a>
       <?php } ?>
     </td>
     </tr>
